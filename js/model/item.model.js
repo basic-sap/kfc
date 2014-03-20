@@ -2,6 +2,7 @@
 define(['util/conn'], function(__c) {
   function Item(_i) {
     var item = _i || {};
+    this._id = item._id || 0;
     this.name = item.name || '';
     this.price = parseInt(item.price || 0);
     this.cost = parseInt(item.cost || 0);
@@ -9,7 +10,7 @@ define(['util/conn'], function(__c) {
     this.img_path = item.img_path || '';
   };
 
-  Item.prototype.get_all_items = function(anddothis, object) {
+  Item.get_all_items = function(anddothis, object) {
     __c.send_to_server('menu.json', {
     }, function(_d) {
       var _items = _d.items;
@@ -19,7 +20,8 @@ define(['util/conn'], function(__c) {
       };
       anddothis.call(object, items);
     }, this);
-  }
+  };
+
 
   return Item;
 });
