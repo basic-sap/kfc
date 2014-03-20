@@ -1,4 +1,4 @@
-;define(['model/cart.model'], function(__Cart){
+;define(['model/cart.model', 'model/item.model'], function(__Cart, __Item){
   return new (function() {
     var __option = {
       elem: {
@@ -13,17 +13,21 @@
     };
 
     var clear_record = function() {
-      __option.elem.cart_record_area.html('');      
+      //__option.elem.cart_record_area.hide();
+      __option.elem.cart_record_area.html('');
+      //__option.elem.cart_record_area.fadeIn();
     };
     var add_record = function(_record) {
-      __option.elem.cart_record_area.append(
-        $('<tr></tr>').append(
-          $('<td></td>').html(_record.item.name),
-          $('<td></td>').html(_record.count),
-          $('<td></td>').html(_record.item.price * _record.count),
-          $('<td></td>').html('x')
-        )
-      );
+      __Item.get_by_id(_record.item_id, function(_i) {
+        __option.elem.cart_record_area.append(
+          $('<tr></tr>').append(
+            $('<td></td>').html(_i.name),
+            $('<td></td>').html(_record.count),
+            $('<td></td>').html(_i.price * _record.count),
+            $('<td></td>').html('x')
+          )
+        );
+      }, this);
     }
 
     this.redraw = function() {

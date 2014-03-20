@@ -21,6 +21,15 @@ define(['util/conn'], function(__c) {
       anddothis.call(object, items);
     }, this);
   };
+  Item.get_by_id = function(_id, anddothis, object) {
+    Item.get_all_items(function(_items){
+      for (var i = _items.length - 1; i >= 0; i--) {
+        if (_id == _items[i]._id) {
+          anddothis.call(object, _items[i]);
+        }
+      };
+    }, this);
+  }
 
 
   return Item;
