@@ -1,0 +1,11 @@
+.menu_item {
+  position: relative;
+  border: solid 3px  #e70012;
+  width: 230px;
+  float: left;
+
+}
+
+.menu_item img {
+  width: 100%;
+}

@@ -1,0 +1,20 @@
+{
+  "items":  [
+    {
+      "_id": 1,
+      "name": "汉堡",
+      "price": 15,
+      "cost": 10,
+      "descr": "双层鸡腿堡",
+      "img_path": "img/i_1.jpg"
+    },
+    {
+      "_id": 2,
+      "name": "汉堡",
+      "price": 15,
+      "cost": 10,
+      "descr": "双层鸡腿堡",
+      "img_path": "img/i_2.jpg"
+    }
+  ]
+}
