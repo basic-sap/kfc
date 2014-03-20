@@ -1,4 +1,4 @@
-;define(['model/item.model'], function(__Item) {
+;define(['model/item.model', 'control/cart.control'], function(__Item, __Cart) {
   return new (function() {
     var __option = {
       elem: {
@@ -8,6 +8,12 @@
     this.init = function(_opt) {
       __option.elem = $.extend({}, __option.elem, _opt);
       this.redraw();
+      /*
+      __option.elem.menu_base.on('click', 'button.add_to_cart', function(event){
+        __Cart.add_record($(this).attr()
+        );
+      });
+*/
     };
     var clear = function() {
       __option.elem.menu_base.html('');
@@ -16,7 +22,9 @@
       __option.elem.menu_base.append(
         $('<div class="menu_item"></div>').append(
           $('<img></img>').attr('src', _i.img_path),
-          $('<button></button>').addClass("btn add_to_cart").html('加入购物车')
+          $('<button></button>').addClass("btn add_to_cart").html('加入购物车').click(function() {
+            __Cart.add_record(_i);
+          })
         )
       );
     };

@@ -10,10 +10,10 @@
     },
     {
       "_id": 2,
-      "name": "汉堡",
+      "name": "鸡肉卷",
       "price": 15,
       "cost": 10,
-      "descr": "双层鸡腿堡",
+      "descr": "双层鸡肉卷",
       "img_path": "img/i_2.jpg"
     }
   ]

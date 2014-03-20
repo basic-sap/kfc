@@ -30,7 +30,7 @@
       clear_record();
       var records = __Cart.get_all_records();
       for (var i = records.length - 1; i >= 0; i--) {
-        records[i]
+        add_record(records[i]);
       };
     };
   })();
