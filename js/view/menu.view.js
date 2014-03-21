@@ -19,6 +19,7 @@
       __option.elem.menu_base.append(
         $('<div class="menu_item"></div>').append(
           $('<img></img>').attr('src', _i.img_path),
+          $('<span></span>').html(_i.name),
           $('<button></button>').addClass("btn add_to_cart").html('加入购物车').attr('item_id', _i._id)
         )
       );

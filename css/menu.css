@@ -12,6 +12,10 @@
   width: 100%;
 }
 
+#menu .menu_item button {
+  float: right;
+}
+
 @media screen and (max-width: 44em) {
   #menu .menu_item {
     width: 48%;
