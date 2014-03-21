@@ -1,0 +1,22 @@
+body {
+  max-width: 70em;
+  min-width: 20em; 
+  margin: 0 auto;
+  width: 90%;
+  height: 100%;
+}
+
+div#menu {
+  width: 75%;
+  float: left;
+}
+@media screen and (max-width: 44em) {
+  div#menu {
+    width: 100%;
+    float: left;
+  }
+}
+div#cart {
+  float: left;
+  width: 25%;
+}
