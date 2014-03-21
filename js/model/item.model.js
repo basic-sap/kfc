@@ -4,8 +4,8 @@ define(['util/conn'], function(__c) {
     var item = _i || {};
     this._id = item._id || 0;
     this.name = item.name || '';
-    this.price = parseInt(item.price || 0);
-    this.cost = parseInt(item.cost || 0);
+    this.price = parseFloat(item.price || 0);
+    this.cost = parseFloat(item.cost || 0);
     this.descr = item.descr || '';
     this.img_path = item.img_path || '';
   };
