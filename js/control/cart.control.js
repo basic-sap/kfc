@@ -4,6 +4,10 @@
       __Model.add_record(_item);
       __View.redraw();
     }
+    this.remove_record = function(_item) {
+      __Model.remove_record(_item);
+      __View.redraw();
+    }
   })();
 });
  

@@ -43,5 +43,14 @@ define(function() {
         save_records(record_list);
       }
     };
+    this.remove_record = function(_item_id) {
+      var record_list = refresh_records();
+      for (var i = record_list.length - 1; i >= 0; i--) {
+        if (record_list[i].item_id == _item_id) {
+          record_list.splice(i, 1);
+        }
+      };
+        
+    };
   })();
 });

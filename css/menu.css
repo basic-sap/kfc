@@ -1,13 +1,19 @@
 
 #menu .menu_item {
   position: relative;
-  border: solid 2px #ccc;
-  width: 230px;
+  border: solid 0.1em #ccc;
+  width: 32%;
   float: left;
-  margin: 3px;
+  margin: 0.5%;
   padding: 0;
 }
 
 #menu .menu_item img {
   width: 100%;
+}
+
+@media screen and (max-width: 44em) {
+  #menu .menu_item {
+    width: 48%;
+  }
 }

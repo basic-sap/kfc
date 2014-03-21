@@ -15,6 +15,54 @@
       "cost": 10,
       "descr": "双层鸡肉卷",
       "img_path": "img/i_2.jpg"
+    },
+    {
+      "_id": 3,
+      "name": "鸡肉卷2",
+      "price": 15,
+      "cost": 10,
+      "descr": "双层鸡肉卷",
+      "img_path": "img/i_2.jpg"
+    },
+    {
+      "_id": 4,
+      "name": "鸡肉卷3",
+      "price": 15,
+      "cost": 10,
+      "descr": "双层鸡肉卷",
+      "img_path": "img/i_2.jpg"
+    },
+    {
+      "_id": 5,
+      "name": "鸡肉卷4",
+      "price": 15,
+      "cost": 10,
+      "descr": "双层鸡肉卷",
+      "img_path": "img/i_2.jpg"
+    },
+    {
+      "_id": 6,
+      "name": "鸡肉卷5",
+      "price": 15,
+      "cost": 10,
+      "descr": "双层鸡肉卷",
+      "img_path": "img/i_2.jpg"
+    },
+    {
+      "_id": 7,
+      "name": "鸡肉卷6",
+      "price": 15,
+      "cost": 10,
+      "descr": "双层鸡肉卷",
+      "img_path": "img/i_2.jpg"
+    },
+    {
+      "_id": 8,
+      "name": "鸡肉卷7",
+      "price": 15,
+      "cost": 10,
+      "descr": "双层鸡肉卷",
+      "img_path": "img/i_2.jpg"
     }
   ]
 }

@@ -7,9 +7,14 @@
       }
     };
     this.init = function(_opt) {
+      var _this = this;
       __option.elem = $.extend({}, __option.elem, _opt);
       __option.elem.cart_record_area = __option.elem.cart_base.find($('table tbody'));
       this.redraw();
+      __option.elem.cart_record_area.on('click', 'span.cart_remove_record', function() {
+        __Cart.remove_record($(this).attr('item_id'));
+        _this.redraw();
+      });
     };
 
     var clear_record = function() {
@@ -24,7 +29,9 @@
             $('<td></td>').html(_i.name),
             $('<td></td>').html(_record.count),
             $('<td></td>').html(_i.price * _record.count),
-            $('<td></td>').html('x')
+            $('<td></td>').append(
+              $('<span></span>').addClass('cart_remove_record').attr('item_id', _record.item_id).html('x')
+            )
           )
         );
       }, this);

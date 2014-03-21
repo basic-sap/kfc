@@ -1,8 +1,7 @@
 #cart {
-  width: 250px;
-  height: 400px;
+  height: 30em;
   position: relative;
-  border: solid 3px  #e70012;;
+  border: solid 0.2em  #e70012;;
   padding: 0;
 }
 
@@ -19,4 +18,10 @@
 #cart table thead th {
   width: 25%;
   text-align: center;
+}
+
+@media screen and (max-width: 44em) {
+  #cart {
+    display: none;
+  }
 }
