@@ -2,7 +2,7 @@ define(['util/conn'], function(__c) {
   function Order(_i) {
     var order = _i || {};
     this._id = order._id || 0;
-    this.order_time = order.order_time || null;
+    this.order_time = new Date(order.order_time || null);
     this.price = parseFloat(order.price || 0);
     this.cost = parseFloat(order.cost || 0);
     this.verified = order.verified || false;
@@ -19,8 +19,11 @@ define(['util/conn'], function(__c) {
       var _orders = _d.orders;
       var orders = [];
       for (var i = _orders.length - 1; i >= 0; i--) {
-        orders.push(new Item(_orders[i]));
+        orders.push(new Order(_orders[i]));
       };
       anddothis.call(object, orders);
     }, this);
   };
+
+  return Order;
+});
