@@ -4,16 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KFC User</title>
-  <link href="js/lib/bootstrap-3.0.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="js/lib/bootstrap-3.0.0/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
   <link href="js/lib/fuelux-master/dist/css/fuelux.min.css" rel="stylesheet" />
   <link href="js/lib/fuelux-master/dist/css/fuelux-responsive.min.css" rel="stylesheet" />
+  <style type="text/css">
+    div#order_grid {
+      width: 90%;
+      margin: 10px auto;
+    }
+  </style>
 </head>
 <body>
   <div id="order_grid">
     <table id="order_grid_table" class="table table-bordered datagrid">
       <thead></thead>
       <tfoot>
+        <tr>
+          <th>
+            <span>销售总额：</span><span id='s_total_sold'></span>
+            <span>利润总额：</span><span id='s_total_profit'></span>
+          </th>
+        </tr>
         <tr>
           <th>
             <div class="datagrid-footer-left" style="display:none;">
@@ -43,12 +53,16 @@
 
             <div class="datagrid-footer-right" style="display:none;">
               <div class="grid-pager">
-                <button type="button" class="btn grid-prevpage"><i class="icon-chevron-left"></i></button>
+                <button type="button" class="btn grid-prevpage">
+                  <i class="icon-chevron-left"></i>
+                </button>
                 <span>Page</span>
 
                 <div class="input-append dropdown combobox">
                   <input class="span1" type="text">
-                  <button type="button" class="btn" data-toggle="dropdown"><i class="caret"></i></button>
+                  <button type="button" class="btn" data-toggle="dropdown">
+                    <i class="caret"></i>
+                  </button>
                   <ul class="dropdown-menu"></ul>
                 </div>
                 <span>of <span class="grid-pages"></span></span>
