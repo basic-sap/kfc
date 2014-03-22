@@ -6,28 +6,85 @@
   <title>KFC Customer</title>
   <link href="js/lib/bootstrap-3.0.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="js/lib/bootstrap-3.0.0/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
-  <link href="css/customer.css" rel="stylesheet">
+  <link href="css/nav.css" rel="stylesheet">
   <link href="css/menu.css" rel="stylesheet">
   <link href="css/cart.css" rel="stylesheet">
-</head>
-<body>
-  <div id="menu">
-  </div>
-  <div id="cart">
-    <h2>购物车</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>品名</th>
-          <th>数量</th>
-          <th>价格</th>
-          <th>取消</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
-  </div>
-</body>
-</html>
-<script data-main="js/customer.main" src='js/lib/requirejs/require-2.1.10.min.js'></script>
+
+  <!--[if lt IE 9]>
+    <script src="js/lib/html5shiv.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    body {
+      max-width: 70em;
+      min-width: 20em; 
+      margin: 0 auto;
+      width: 90%;
+      height: 100%;
+    }
+
+    section div {
+      float: left;
+    }
+
+    div#menu {
+      width: 75%;
+    }
+    @media screen and (max-width: 44em) {
+      div#menu {
+        width: 100%;
+      }
+    }
+    div#cart {
+      width: 25%;
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--a class="navbar-brand" href="#">Brand</a-->
+          <img src="img/logo.png" />
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">开始订餐</a></li>
+            <li><a href="#">餐品比较</a></li>
+            <li><a href="user.html">订单统计</a></li>
+          </ul>          
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    </header>
+    <section>
+      <div id="menu">
+      </div>
+      <div id="cart">
+        <h2>购物车</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>品名</th>
+              <th>数量</th>
+              <th>价格</th>
+              <th>取消</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </body>
+  </html>
+  <script data-main="js/customer.main" src='js/lib/requirejs/require-2.1.10.min.js'></script>

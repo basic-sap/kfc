@@ -17,10 +17,11 @@
     };
     var add_item = function(_i) {
       __option.elem.menu_base.append(
-        $('<div class="menu_item"></div>').append(
+        $('<div class="menu_item text-right"></div>').append(
           $('<img></img>').attr('src', _i.img_path),
-          $('<span></span>').html(_i.name),
-          $('<button></button>').addClass("btn add_to_cart").html('加入购物车').attr('item_id', _i._id)
+          $('<h4></h4>').html(_i.name),
+          $('<button></button>').addClass("btn btn-default btn-xs add_to_compare").html('加入比较').attr('item_id', _i._id),
+          $('<button></button>').addClass("btn btn-primary btn-xs add_to_cart").html('加入购物车').attr('item_id', _i._id)
         )
       );
     };
