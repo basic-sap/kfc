@@ -29,11 +29,11 @@
       __option.elem.cart_record_area.append(
         $('<tr></tr>').append(
           $('<td></td>').html(item.name),
-          $('<td></td>').html(_record.count),
+          $('<td></td>').html(_record.count).css('text-align', 'center'),
           $('<td></td>').html(item.price * _record.count),
           $('<td></td>').append(
-            $('<span></span>').addClass('cart_remove_record').attr('item_id', _record.item_id).html('x')
-          )
+            $('<span></span>').addClass('cart_remove_record glyphicon glyphicon-remove').attr('item_id', _record.item._id)
+          ).css('text-align', 'center')
         )
       );
     };
