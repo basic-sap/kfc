@@ -1,4 +1,4 @@
-;define(['model/item.model', 'control/cart.control'], function(__Item, __Cart) {
+;define(['model/item.model', 'control/cart.control', 'control/compare.control'], function(__Item, __Cart, __Compare) {
   return new (function() {
     var __option = {
       elem: {
@@ -10,6 +10,9 @@
       this.redraw();
       __option.elem.menu_base.on('click', 'button.add_to_cart', function(event){
         __Cart.add_record($(this).attr('item_id'));
+      });
+      __option.elem.menu_base.on('click', 'button.add_to_compare', function(event){
+        __Compare.add_item($(this).attr('item_id'));
       });
     };
     var clear = function() {
