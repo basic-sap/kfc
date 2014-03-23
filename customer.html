@@ -71,18 +71,28 @@
       </div>
       <div id="cart">
         <h2>购物车</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>品名</th>
-              <th>数量</th>
-              <th>价格</th>
-              <th>取消</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
+        <div id="div_order_list">
+          <table>
+            <thead>
+              <tr>
+                <th>品名</th>
+                <th>数量</th>
+                <th>价格</th>
+                <th>取消</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+        <div id="div_order_sum">
+          <label class="label label-default">
+            订单总额: <span id="order_sum">12</span> 元
+          </label>
+          <button class="btn btn-primary btn-block"> 
+            去结算
+          </button>
+        </div>
       </div>
     </section>
   </body>

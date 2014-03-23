@@ -9,7 +9,7 @@
       __option.elem = $.extend({}, __option.elem, _opt);
       this.redraw();
       __option.elem.menu_base.on('click', 'button.add_to_cart', function(event){
-        __Cart.add_record($(this).attr('item_id'));
+        __Cart.add_record($(this).data("item"));
       });
       __option.elem.menu_base.on('click', 'button.add_to_compare', function(event){
         __Compare.add_item($(this).attr('item_id'));
@@ -24,7 +24,7 @@
           $('<img></img>').attr('src', _i.img_path),
           $('<h4></h4>').html(_i.name),
           $('<button></button>').addClass("btn btn-default btn-xs add_to_compare").html('加入比较').attr('item_id', _i._id),
-          $('<button></button>').addClass("btn btn-primary btn-xs add_to_cart").html('加入购物车').attr('item_id', _i._id)
+          $('<button></button>').addClass("btn btn-primary btn-xs add_to_cart").html('加入购物车').data('item', _i)
         )
       );
     };

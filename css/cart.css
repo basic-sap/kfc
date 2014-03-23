@@ -1,8 +1,28 @@
 #cart {
-  height: 30em;
   position: relative;
-  border: solid 0.2em  #e70012;;
   padding: 0;
+  border: solid 0.14em  #e70012;;
+  height: 30em;
+}
+
+#cart div {
+  position: relative;
+  width: 100%;
+}
+
+#cart #div_order_list {
+  height: 80%;
+}
+#cart #div_order_sum {
+  height: 10%;
+}
+
+#cart #div_order_list table {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  border: none;
+  border-collapse: collapse;
 }
 
 #cart h2 {
@@ -14,15 +34,24 @@
   background-image: linear-gradient(to bottom,#e70012 0,#BD0E0E 100%);
 }
 
-#cart table {
-  position: relative;
-  width: 100%;
-}
-#cart table thead th {
+#cart #div_order_list table thead th {
   width: 25%;
   text-align: center;
   font-size: 0.9em;
   font-color: #333;
+}
+
+#cart #div_order_sum label {
+  display: block;
+  width: 95%;
+  margin: 0.1em auto;
+  text-align: right;
+  background-image: linear-gradient(to bottom,#e70012 0,#BD0E0E 100%);
+}
+
+#cart #div_order_sum button {
+  width: 95%;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 44em) {
