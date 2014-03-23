@@ -1,0 +1,16 @@
+.datagrid thead {
+  background-color: #f9f9f9;
+}
+.datagrid tfoot .datagrid-footer-left {
+  float: left;
+}
+.datagrid tfoot .datagrid-footer-right {
+  float: right;
+}
+
+.datagrid tfoot .grid-pager button,
+.datagrid tfoot .grid-pager span,
+.datagrid tfoot .grid-pager div
+ {
+  display: inline-block;
+}

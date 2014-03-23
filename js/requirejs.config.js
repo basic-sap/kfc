@@ -6,7 +6,8 @@ define(function() {
       'underscore': 'lib/underscore.min',
       'jquery.cookie': 'lib/jquery.cookie',
       'bootstrap': 'lib/bootstrap-3.0.0/dist/js/bootstrap.min',
-      'fuelux': 'lib/fuelux-master/dist'
+      'fuelux': 'lib/fuelux-master/dist',
+      'moment': 'lib/moment'
     },
     shim: {
       'bootstrap':  ['jquery']

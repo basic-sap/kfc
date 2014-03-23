@@ -87,9 +87,9 @@
             $.each(_orders, function(_i, _o){
               _o.order_time_disp = _o.order_time ? _o.order_time.format('yyyy-MM-dd hh:mm') : '';
               _o.deliveried_time_disp = _o.deliveried_time ? _o.deliveried_time.format('yyyy-MM-dd hh:mm') : '';
-              _o.verified_disp = _o.verified ? '<span class="label">已审核</span>': '<button class="btn">审核</button>';
-              _o.paid_disp = _o.paid ? '<span class="label">已付款</span>' : '<span class="label label-warning">未付款</span>';
-              _o.deliveried_disp = _o.deliveried ? '<span class="label">已送</span>' : '<span class="label label-warning">未送</span>';
+              _o.verified_disp = _o.verified ? '<span class="label label-default">已审核</span>': '<button class="btn btn-sm btn-default">审核</button>';
+              _o.paid_disp = _o.paid ? '<span class="label label-default">已付款</span>' : '<span class="label label-warning">未付款</span>';
+              _o.deliveried_disp = _o.deliveried ? '<span class="label label-default">已送</span>' : '<span class="label label-warning">未送</span>';
             });
           }
         });
