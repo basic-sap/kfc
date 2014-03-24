@@ -46,9 +46,11 @@
   padding: 0.1em;
 }
 #cart #div_order_list table tbody td {
-  font-size: 1em;
+  font-size: 0.9em;
   font-color: #333;
-  padding: 0.1em;
+  padding: 0.3em;
+  border-bottom: 1px #b56e56 solid;
+  color: #a34a2c;
 }
 
 #cart #div_order_sum label {
