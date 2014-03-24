@@ -73,6 +73,32 @@
 
 @media screen and (max-width: 44em) {
   #cart {
+    background-color: #FAF0EB;
+  }
+  #cart h2,
+  #cart div {
+    float: left;
+  }
+  #cart h2{
+    width: 30%;
+  }
+  #cart div {
+    width: 70%;
+  }
+  #cart #div_order_sum label {
+    float: left;
+    width: 70%;
+    margin: 0;
+    text-align: left;
+    font-size: 1.2em;
+    padding: 0.4em;
+  }
+  #cart #div_order_sum button {
+    float: right;
+    display: inline;
+    width: 30%;
+  }
+  #cart #div_order_list {
     display: none;
   }
 }
