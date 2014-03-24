@@ -1,0 +1,18 @@
+#modal_compare table {
+  position: relative;
+  width: 95%;
+}
+
+#modal_compare table td {
+  width: 40%;
+  padding: 2%;
+}
+#modal_compare table td.compare_item_span {
+  width: 20%;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+#modal_compare table td img {
+  width: 100%;
+}
