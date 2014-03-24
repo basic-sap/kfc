@@ -32,8 +32,8 @@
       _table.find('td#compare_item_pic_2').html('').append(
         $('<img></img>').attr('src', _i_list[c_2].img_path)
       );
-      _table.find('td#compare_item_price_1').html(_i_list[c_1].price);
-      _table.find('td#compare_item_price_2').html(_i_list[c_2].price);
+      _table.find('td#compare_item_price_1').html(_i_list[c_1].price + '元/份');
+      _table.find('td#compare_item_price_2').html(_i_list[c_2].price + '元/份');
     }
     this.show = function() {
       if (__Compare_Store.get_count() < 2) {
@@ -45,7 +45,7 @@
         __option.elem.compare_table.show();
         var item_list = __Compare_Store.get_list();
         __option.elem.compare_table.find('td.compare_item_select').html('').append(item_select(item_list)).change(function() {
-          redraw_table(item_list);
+          redraw_table(__Compare_Store.get_list());
         });
         redraw_table(item_list);
       }

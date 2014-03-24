@@ -17,6 +17,16 @@
         __Cart.remove_record($(this).attr('item_id'));
         _this.redraw();
       });
+      var cartH = __option.elem.cart_base.offset().top;
+      $(window).scroll(function() {
+        var scroH = $(this).scrollTop();
+        if (scroH >= cartH) {
+          __option.elem.cart_base.css({'margin-top': scroH - cartH});
+        }
+        else {
+          __option.elem.cart_base.css({'margin-top': '0'});
+        }
+      })
     };
 
     var clear_record = function() {

@@ -9,9 +9,12 @@
     };
     var item_exists = function(_item_id) {
       var l = refresh_list();
-      if (-1 == _.indexOf(l, _item_id)) 
-        return false;
-      return true;
+      for (var i = l.length - 1; i >= 0; i--) {
+        if (l[i]._id == _item_id) {
+          return true;
+        }
+      };
+      return false;
     };
     this.add_item = function(_item) {
       if (item_exists(_item._id)) {
