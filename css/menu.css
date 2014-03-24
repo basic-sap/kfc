@@ -1,20 +1,44 @@
 
 #menu .menu_item {
   position: relative;
-  border: solid 0.1em #ccc;
   width: 32%;
   float: left;
   margin: 0.5%;
   padding: 0;
+  background-color: #f7f6f6;
+  border: 0.1em #d0d0d0 solid;
 }
 
 #menu .menu_item img {
   width: 100%;
 }
-
-s#menu .menu_item button {
-  float: right;
+#menu .menu_item div{
+  position: relative;
+  width: 100%;
+  padding: 0.2em;
 }
+#menu .menu_item div label {
+  color: #7f3f00;
+  font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0;
+}
+
+#menu .menu_item div label.menu_item_name {
+  width: 50%;
+}
+#menu .menu_item div label.menu_item_price {
+  text-align: right;
+  width: 50%;
+}
+#menu .menu_item div.menu_item_opera {
+  text-align: center;
+}
+#menu .menu_item button {
+  margin: 0 0.2em;
+}
+
 
 @media screen and (max-width: 44em) {
   #menu .menu_item {

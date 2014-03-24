@@ -20,11 +20,17 @@
     };
     var add_item = function(_i) {
       __option.elem.menu_base.append(
-        $('<div class="menu_item text-right"></div>').append(
+        $('<div class="menu_item"></div>').append(
           $('<img></img>').attr('src', _i.img_path),
-          $('<h4></h4>').html(_i.name),
-          $('<button></button>').addClass("btn btn-default btn-xs add_to_compare").html('加入比较').attr('item_id', _i._id),
-          $('<button></button>').addClass("btn btn-primary btn-xs add_to_cart").html('加入购物车').data('item', _i)
+          $('<div></div>').append(
+            $('<label></label>').html(_i.name).addClass("menu_item_name"),
+            $('<label></label>').html(_i.price + '元/份').addClass("menu_item_price")),
+          $('<div></div>').addClass("menu_item_opera").append(          
+            $('<button></button>').addClass("btn btn-default btn-xs add_to_compare").html('加入比较').attr('item_id', _i._id),
+            $('<button></button>').addClass("btn btn-primary btn-xs add_to_cart").append(
+              $('<span></span>').addClass('glyphicon glyphicon-shopping-cart'),
+              ' 加入购物车'
+              ).data('item', _i))
         )
       );
     };
