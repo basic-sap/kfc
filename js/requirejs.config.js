@@ -8,11 +8,17 @@ define(function() {
       'bootstrap': 'lib/bootstrap-3.0.0/dist/js/bootstrap.min',
       'fuelux': 'lib/fuelux-master/dist',
       'moment': 'lib/moment',
-      'flot': 'lib/flot'
+      'flot': 'lib/flot/jquery.flot.min',
+      'flot_time': 'lib/flot/jquery.flot.time.min',
+      'flot_valuelabels': 'lib/flot/jquery.flot.valuelabels',
+      'flot_pie': 'lib/flot/jquery.flot.pie.min',
+      
     },
     shim: {
-      'flot/jquery.flot.min': {deps: ['jquery']},
-      'flot/jquery.flot.time.min': {deps: ['jquery', 'flot/jquery.flot.min']},
+      'flot': {deps: ['jquery']},
+      'flot_time': {deps: ['jquery', 'flot']},
+      'flot_valuelabels': {deps: ['jquery', 'flot']},
+      'flot_pie': {deps: ['jquery', 'flot']},
     }
   });})();
 });
