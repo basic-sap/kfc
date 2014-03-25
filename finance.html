@@ -14,7 +14,6 @@
   <![endif]-->
   <style type="text/css">
     body {
-      padding-bottom: 5em;
     }
     header, section {
       position: relative;
@@ -27,6 +26,7 @@
     section {
       position: relative;
       margin: 1em auto;
+      margin-bottom: 5em;
     }
     section h2 {
       font-size: 2em;
@@ -34,20 +34,45 @@
       font-family: "微软雅黑", Arial, Helvetica, sans-serif;
     }
     section#sec_chart_daily_fi div#daily_fi_chart {
-      position: relative;
       width: 95%;
     }
+    section#sec_chart_daily_fi table#table_fi_chart {
+      position: relative;
+      width: 100%;
+    }
+    section#sec_chart_daily_fi table td.td_chart {
+      position: relative;
+      width: 80%;
+    }
+    section#sec_chart_daily_fi table td.td_button {
+      position: relative;
+      width: 10%;
+      text-align: center;
+    }
+    section#sec_chart_daily_fi table td.td_button button {
+      height: 3em;
+      width: 90%;
+      max-width: 3em;
+      padding: 0;
+
+    }
+    section#sec_chart_daily_fi table td.td_button button span {
+      width: 90%;
+    }
+    
+      
+
     section#sec_chart_daily_fi div#daily_fi_chart div.chart_area {
+      position: relative;
       width: 100%;
       height: 20em;
     }
 
     section#sec_chart_daily_fi div#daily_fi_chart div.button_area {
       position: relative;
-      text-align: center;
     }
     section#sec_chart_daily_fi div#daily_fi_chart div.button_area button {
-      margin: 1em 2em ;
+      margin: 1em 0.5em ;
     }
     section div.chart_area {
       width: 100%;
@@ -87,10 +112,30 @@
     <section id="sec_chart_daily_fi" class="sec_chart">
       <h2>日销售图表</h2>
       <div id="daily_fi_chart">
-        <div class="chart_area"></div>
+        <table id="table_fi_chart">
+          <tr>
+            <td class="td_button">
+              <button id='btn_date_mins' class="btn btn-default">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </button>
+            </td>
+            <td class="td_chart">
+              <div class="chart_area"></div>
+            </td>
+            <td class="td_button">
+              <button id='btn_date_plus' class="btn btn-default">                
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </button>
+            </td>
+          </tr>
+        </table>
         <div class="button_area">
-          <button id="chart_item_sell" class="btn btn-default">日销售</button>      
-          <button id="chart_item_profit" class="btn btn-default">日利润</button>
+          <label>显示项目：</label>
+          <button id="chart_item_sell" class="active btn btn-default">日销售</button>      
+          <button id="chart_item_profit" class="active btn btn-default">日利润</button>
+          <label>单屏天数：</label>
+          <button value=5 class="active btn_date_display btn btn-default">5</button>
+          <button value=10 class="btn_date_display btn btn-default">10</button>
         </div>
       </div>
     </section>

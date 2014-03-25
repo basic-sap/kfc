@@ -8,6 +8,8 @@
         button_sell: null,
         button_profit: null
       },
+      date_delta: 0,
+      date_display: 5,
       dataset: {
         'sell': {
           label: '日销售',
@@ -23,16 +25,19 @@
         }
       },
       chart_opt: {
-        lines: {
+        bars: {
           show: true,
-          lineWidth: 1
+          lineWidth: 20,
         },
         xaxis: {
           mode: "time",
           timeformat: "%Y/%m/%d",
           minTickSize: [1, "day"],
           tickLength: 1,
-          //min: new Date(Math.ceil((new Date) / (24*60*60*1000)) * (24*60*60*1000) - 4*24*60*60*1000)
+          max: new Date(Math.floor((new Date) / (24*60*60*1000)) * (24*60*60*1000) - this.date_delta * 24*60*60*1000),
+          min: new Date(Math.floor((new Date) / (24*60*60*1000)) * (24*60*60*1000) - 4*24*60*60*1000)
+        },
+        legend: {
         },
         yaxis: {
           max: 1000,
@@ -56,11 +61,27 @@
     this.init = function(_opt) {
       var _this = this;
       __option.elem = $.extend(__option.elem, _opt);
+      __option.elem.dom_base.find('button#btn_date_mins').click(function(_e) {
+        __option.date_delta++;
+        _this.redraw();        
+      });
+      __option.elem.dom_base.find('button#btn_date_plus').click(function(_e) {
+        __option.date_delta--;
+        _this.redraw();        
+      });
+      __option.elem.dom_base.find('button.btn_date_display').click(function(_e) {
+        var d = $(this).attr('value');
+        __option.elem.dom_base.find('button.btn_date_display').removeClass('active');
+        $(this).addClass('active');
+        __option.date_display = parseInt(d);
+        _this.redraw();
+      });
       __option.elem.chart_area = __option.elem.dom_base.find("div.chart_area");
+
       __option.elem.button_area = __option.elem.dom_base.find('div.button_area');
       __option.elem.button_sell = __option.elem.button_area.find('button#chart_item_sell');
       __option.elem.button_profit = __option.elem.button_area.find('button#chart_item_profit');
-      __option.elem.button_area.find('button').addClass('active');
+      //__option.elem.button_area.find('button').addClass('active');
 
       __option.elem.button_sell.click(function() {
         if ($(this).hasClass('active')) {
@@ -127,7 +148,11 @@
         });
         var data = gen_display_data();
         var option = __option.chart_opt;
-        console.log(data);
+        var day_long = 24*60*60*1000;
+        var today = Math.floor((new Date()) / (day_long)) * (day_long)
+        option.xaxis.max = new Date(today - __option.date_delta * day_long);
+        option.xaxis.min = new Date(option.xaxis.max - (__option.date_display - 1) * day_long);
+        //console.log(data);
         $.plot(__option.elem.chart_area, data, option);
       }, this);
     };
