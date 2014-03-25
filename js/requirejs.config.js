@@ -15,6 +15,8 @@ define(function() {
       
     },
     shim: {
+      'fuelux': {deps: ['jquery', 'underscore']},
+      'bootstrap': {deps: ['jquery']},
       'flot': {deps: ['jquery']},
       'flot_time': {deps: ['jquery', 'flot']},
       'flot_valuelabels': {deps: ['jquery', 'flot']},
