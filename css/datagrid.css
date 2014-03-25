@@ -14,3 +14,19 @@
  {
   display: inline-block;
 }
+
+.datagrid td,
+.datagrid td span,
+.datagrid td button {
+  font-size: .95em;
+  vertical-align: middle;
+}
+
+
+.datagrid td {
+  padding: .2em;
+}
+
+.datagrid td button{
+  margin: 0;
+}
