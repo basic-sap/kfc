@@ -1,4 +1,4 @@
-;define(['model/order.model'], function(__Order) {
+;define(['model/order.model', 'util/date.format'], function(__Order) {
   return new (function() {
     var __option = {
       elem: {
@@ -29,10 +29,14 @@
         },
         xaxis: {
           mode: "time",
+          timeformat: "%Y/%m/%d",
+          minTickSize: [1, "day"],
           tickLength: 1,
+          //min: new Date(Math.ceil((new Date) / (24*60*60*1000)) * (24*60*60*1000) - 4*24*60*60*1000)
         },
         yaxis: {
-          max: 500
+          max: 1000,
+          min: 0,
         },
         series: {
           valueLabels: {
@@ -90,13 +94,13 @@
       var r = [];
       $.each(list, function() {
         for (var i = r.length - 1; i >= 0; i--) {
-          if (r[i][0] - this.order_time == 0) {
+          if (r[i][0] - new Date(this.order_time.format('yyyy-MM-dd')) == 0) {
             r[i][1] += _value_fun(this);
             return;
           }
         };
         var pair = [];
-        pair[0] = this.order_time;
+        pair[0] = new Date(this.order_time.format('yyyy-MM-dd'));
         pair[1] = _value_fun(this);
         r.push(pair);
       });
