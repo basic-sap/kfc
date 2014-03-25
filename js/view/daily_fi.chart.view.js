@@ -24,18 +24,29 @@
       },
       chart_opt: {
         lines: {
-          show: true
+          show: true,
+          lineWidth: 1
         },
         xaxis: {
           mode: "time",
           tickLength: 1,
         },
+        yaxis: {
+          max: 500
+        },
         series: {
           valueLabels: {
             show: true,
-            showAsHtml: true,          
+            showAsHtml: true,
           }
+        },
+        grid: {
+          show: true,
+          backgroundColor: '#f7f6f6',
+          borderWidth: 1,
+          borderColor: '#aaa',
         }
+
       }
     };
     this.init = function(_opt) {
@@ -112,6 +123,7 @@
         });
         var data = gen_display_data();
         var option = __option.chart_opt;
+        console.log(data);
         $.plot(__option.elem.chart_area, data, option);
       }, this);
     };

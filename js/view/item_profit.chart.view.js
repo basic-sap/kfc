@@ -13,7 +13,7 @@
           },
           valueLabels: {
             show: false,
-            showAsHtml: true,          
+            showAsHtml: false,
           }
         }
       }
